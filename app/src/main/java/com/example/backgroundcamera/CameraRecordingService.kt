@@ -112,6 +112,7 @@ class CameraRecordingService : Service() {
         val file = File(moviesDir, "VID_$timestamp.mp4")
         return file.absolutePath
     }
+    }
 
     private fun createOutputFile(): String {
         val moviesDir = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
@@ -126,7 +127,6 @@ class CameraRecordingService : Service() {
         val file = File(moviesDir, "VID_$timestamp.mp4")
         return file.absolutePath
     }
-
     private fun setupMediaRecorder(outputPath: String) {
         mediaRecorder = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
             MediaRecorder(this)
